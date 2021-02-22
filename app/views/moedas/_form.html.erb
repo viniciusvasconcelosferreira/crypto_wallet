@@ -24,7 +24,9 @@
   <div class="field">
     <%= form.label :url_imagem %>
     <%= form.text_field :url_imagem %>
-    <%= image_tag moeda.url_imagem, width: 65 %>
+    <% if moeda.url_imagem? %>
+      <%= image_tag moeda.url_imagem, width: 65 %>
+    <% end %>
   </div>
 
   <div class="actions">

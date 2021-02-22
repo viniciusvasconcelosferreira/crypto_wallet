@@ -1,7 +1,10 @@
-<h1>Seja Bem-Vindo ao Crypto Wallet App!</h1>
+<h1>Seja Bem-Vindo,
+  <strong><%= @meu_nome %></strong>
+  ao Crypto Wallet App!</h1>
 <p><strong>Data:</strong> <%= data_br(Date.today) %></p>
-<ul>
-  <li>
-    <%= link_to 'Moedas', moedas_path %>
-  </li>
-</ul>
+<%= render 'menu' %>
+<p>Você está no ambiente de:
+  <strong>
+    <%= ambiente_rails %>
+  </strong>
+</p>
