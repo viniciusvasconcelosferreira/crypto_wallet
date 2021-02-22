@@ -1,4 +1,5 @@
 class MoedasController < ApplicationController
+  # layout "nome_do_layout"
   before_action :set_moeda, only: %i[ show edit update destroy ]
 
   # GET /moedas or /moedas.json
