@@ -86,6 +86,10 @@ namespace :dev do
         {
           descricao: 'Proof of Stake',
           sigla: 'PoS'
+        },
+        {
+          descricao: 'Proof of Capacity',
+          sigla: 'PoC'
         }
       ]
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_123526) do
+ActiveRecord::Schema.define(version: 2021_02_24_131635) do
 
   create_table "moedas", force: :cascade do |t|
     t.string "descricao"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_02_24_123526) do
     t.string "url_imagem"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tipo_mineracao_id"
+    t.index ["tipo_mineracao_id"], name: "index_moedas_on_tipo_mineracao_id"
   end
 
   create_table "tipo_mineracaos", force: :cascade do |t|
@@ -27,4 +29,5 @@ ActiveRecord::Schema.define(version: 2021_02_24_123526) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "moedas", "tipo_mineracaos"
 end
