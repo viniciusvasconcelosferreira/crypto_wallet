@@ -29,6 +29,11 @@
     <% end %>
   </div>
 
+  <div class="field">
+    <%= form.label :tipo_mineracao_id %>
+    <%= form.select('tipo_mineracao_id', TipoMineracao.all.collect { |tm| [tm.descricao, tm.id] }, { include_blank: 'Selecione o tipo de mineração' }) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

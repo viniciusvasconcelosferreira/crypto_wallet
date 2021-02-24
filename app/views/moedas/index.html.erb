@@ -8,6 +8,7 @@
     <th>Descrição</th>
     <th>Sigla</th>
     <th>Imagem</th>
+    <th>Tipo de mineração</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -19,6 +20,7 @@
       <td><%= moeda.sigla %></td>
       <!--      <td><img src="<%#= moeda.url_imagem %>" style="width: 65px;"></td>-->
       <td><%= image_tag moeda.url_imagem, width: '50', height: 'auto' %></td>
+      <td><%= moeda.tipo_mineracao.descricao %> (<%= moeda.tipo_mineracao.sigla %>)</td>
       <td><%= link_to 'Visualizar', moeda %></td>
       <td><%= link_to 'Editar', edit_moeda_path(moeda) %></td>
       <td><%= link_to 'Excluir', moeda, method: :delete, data: { confirm: 'Tem certeza?' } %></td>

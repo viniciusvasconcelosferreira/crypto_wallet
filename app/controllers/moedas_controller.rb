@@ -58,13 +58,14 @@ class MoedasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_moeda
-      @moeda = Moeda.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def moeda_params
-      params.require(:moeda).permit(:descricao, :sigla, :url_imagem)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_moeda
+    @moeda = Moeda.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def moeda_params
+    params.require(:moeda).permit(:descricao, :sigla, :url_imagem, :tipo_mineracao_id)
+  end
 end
