@@ -1,10 +1,12 @@
 <h1>Seja Bem-Vindo,
   <strong><%= @meu_nome %></strong>
   ao Crypto Wallet App!</h1>
-<p><strong>Data:</strong> <%= data_br(Date.today) %></p>
+<!--<p><strong>Data:</strong> <%#= data_br(Date.today) %></p>-->
+<p><strong>Data:</strong> <%= Date.today %></p>
 <%= render 'menu' %>
 <p>Você está no ambiente de:
   <strong>
     <%= ambiente_rails %>
   </strong>
 </p>
+<p>O idioma usado nessa aplicação é: <strong><%= local(I18n.locale) %></strong></p>
