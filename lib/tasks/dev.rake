@@ -80,11 +80,11 @@ namespace :dev do
     mostrar_spinner('Cadastrando tipos de mineração') {
       tipo_mineracao = [
         {
-          nome: 'Proof of work',
+          descricao: 'Proof of work',
           sigla: 'PoW'
         },
         {
-          nome: 'Proof of Stake',
+          descricao: 'Proof of Stake',
           sigla: 'PoS'
         }
       ]

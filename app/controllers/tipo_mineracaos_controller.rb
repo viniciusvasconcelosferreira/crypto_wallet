@@ -64,6 +64,6 @@ class TipoMineracaosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tipo_mineracao_params
-      params.require(:tipo_mineracao).permit(:nome, :sigla)
+      params.require(:tipo_mineracao).permit(:descricao, :sigla)
     end
 end

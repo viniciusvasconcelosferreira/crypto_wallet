@@ -17,7 +17,7 @@ class TipoMineracaosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tipo_mineracao" do
     assert_difference('TipoMineracao.count') do
-      post tipo_mineracaos_url, params: { tipo_mineracao: { nome: @tipo_mineracao.nome, sigla: @tipo_mineracao.sigla } }
+      post tipo_mineracaos_url, params: { tipo_mineracao: { descricao: @tipo_mineracao.descricao, sigla: @tipo_mineracao.sigla } }
     end
 
     assert_redirected_to tipo_mineracao_url(TipoMineracao.last)
@@ -34,7 +34,7 @@ class TipoMineracaosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tipo_mineracao" do
-    patch tipo_mineracao_url(@tipo_mineracao), params: { tipo_mineracao: { nome: @tipo_mineracao.nome, sigla: @tipo_mineracao.sigla } }
+    patch tipo_mineracao_url(@tipo_mineracao), params: { tipo_mineracao: { descricao: @tipo_mineracao.descricao, sigla: @tipo_mineracao.sigla } }
     assert_redirected_to tipo_mineracao_url(@tipo_mineracao)
   end
 

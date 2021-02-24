@@ -14,7 +14,7 @@ class TipoMineracaosTest < ApplicationSystemTestCase
     visit tipo_mineracaos_url
     click_on "New Tipo Mineracao"
 
-    fill_in "Nome", with: @tipo_mineracao.nome
+    fill_in "Descricao", with: @tipo_mineracao.descricao
     fill_in "Sigla", with: @tipo_mineracao.sigla
     click_on "Create Tipo mineracao"
 
@@ -26,7 +26,7 @@ class TipoMineracaosTest < ApplicationSystemTestCase
     visit tipo_mineracaos_url
     click_on "Edit", match: :first
 
-    fill_in "Nome", with: @tipo_mineracao.nome
+    fill_in "Descricao", with: @tipo_mineracao.descricao
     fill_in "Sigla", with: @tipo_mineracao.sigla
     click_on "Update Tipo mineracao"
 
