@@ -1,6 +1,7 @@
 class MoedasController < ApplicationController
   # layout "nome_do_layout"
   before_action :set_moeda, only: %i[ show edit update destroy ]
+  before_action :set_tipo_mineracao_opcoes, only: %i[new create edit update]
 
   # GET /moedas or /moedas.json
   def index
@@ -55,6 +56,12 @@ class MoedasController < ApplicationController
       format.html { redirect_to moedas_url, notice: "Moeda was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def set_tipo_mineracao_opcoes
+    @tipo_mineracao_opcoes = TipoMineracao.all.pluck(:descricao, :id)
   end
 
   private
