@@ -7,28 +7,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+# Use o rails dev:setup para configurar e popular o banco
 
-Moeda.create!(
-  [
-    {
-      descricao: 'Bitcoin',
-      sigla: 'BTC',
-      url_imagem: 'https://cdn.freebiesupply.com/logos/large/2x/bitcoin-logo-png-transparent.png'
-    },
-    {
-      descricao: 'Ethereum',
-      sigla: 'ETH',
-      url_imagem: 'https://cryptologos.cc/logos/ethereum-eth-logo.png'
-    },
-    {
-      descricao: 'Tether',
-      sigla: 'USDT',
-      url_imagem: 'https://cryptologos.cc/logos/tether-usdt-logo.png'
-    },
-    {
-      descricao: 'Dash',
-      sigla: 'DASH',
-      url_imagem: 'https://cdn.freebiesupply.com/logos/large/2x/dash-3-logo-png-transparent.png'
-    }
-  ]
-)

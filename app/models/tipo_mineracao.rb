@@ -1,0 +1,2 @@
+class TipoMineracao < ApplicationRecord
+end

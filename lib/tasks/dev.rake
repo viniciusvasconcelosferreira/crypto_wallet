@@ -10,7 +10,7 @@ namespace :dev do
       mostrar_spinner('Apagando banco de dados') { %x(rails db:drop) }
       mostrar_spinner('Criando banco de dados') { %x(rails db:create) }
       mostrar_spinner('Migrando banco de dados') { %x(rails db:migrate) }
-      mostrar_spinner('Populando banco de dados') { %x(rails db:seed) }
+       %x(rails dev:add_dados)
 
       # spinner = TTY::Spinner.new("[:spinner] Apagando banco de dados")
       # spinner.auto_spin
@@ -37,6 +37,62 @@ namespace :dev do
       spinner.auto_spin
       spinner.error("(Falha)")
     end
+  end
+
+  desc "Popula banco de dados"
+  task add_dados: :environment do
+    mostrar_spinner('Cadastrando moedas') {
+      moedas = [
+        {
+          descricao: 'Bitcoin',
+          sigla: 'BTC',
+          url_imagem: 'https://cdn.freebiesupply.com/logos/large/2x/bitcoin-logo-png-transparent.png'
+        },
+        {
+          descricao: 'Ethereum',
+          sigla: 'ETH',
+          url_imagem: 'https://cryptologos.cc/logos/ethereum-eth-logo.png'
+        },
+        {
+          descricao: 'Tether',
+          sigla: 'USDT',
+          url_imagem: 'https://cryptologos.cc/logos/tether-usdt-logo.png'
+        },
+        {
+          descricao: 'Dash',
+          sigla: 'DASH',
+          url_imagem: 'https://cdn.freebiesupply.com/logos/large/2x/dash-3-logo-png-transparent.png'
+        },
+        {
+          descricao: 'Ripple',
+          sigla: 'XRP',
+          url_imagem: 'https://cdn.freebiesupply.com/logos/large/2x/ripple-2-logo-png-transparent.png'
+        }, {
+          descricao: 'Litecoin',
+          sigla: 'LTC',
+          url_imagem: 'https://cryptologos.cc/logos/litecoin-ltc-logo.png'
+        }
+      ]
+      moedas.each do |m|
+        Moeda.find_or_create_by!(m)
+      end
+    }
+    mostrar_spinner('Cadastrando tipos de mineração') {
+      tipo_mineracao = [
+        {
+          nome: 'Proof of work',
+          sigla: 'PoW'
+        },
+        {
+          nome: 'Proof of Stake',
+          sigla: 'PoS'
+        }
+      ]
+
+      tipo_mineracao.each do |tm|
+        TipoMineracao.find_or_create_by!(tm)
+      end
+    }
   end
 
   private

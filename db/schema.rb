@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_235910) do
+ActiveRecord::Schema.define(version: 2021_02_24_115007) do
 
   create_table "moedas", force: :cascade do |t|
     t.string "descricao"
     t.string "sigla"
     t.string "url_imagem"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tipo_mineracaos", force: :cascade do |t|
+    t.string "nome"
+    t.string "sigla"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

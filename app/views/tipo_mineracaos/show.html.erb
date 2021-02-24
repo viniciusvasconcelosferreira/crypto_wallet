@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @tipo_mineracao.nome %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @tipo_mineracao.sigla %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_mineracao_path(@tipo_mineracao) %> |
+<%= link_to 'Back', tipo_mineracaos_path %>
